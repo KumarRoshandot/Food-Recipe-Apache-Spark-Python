@@ -58,15 +58,17 @@ Requirements
   --deploy-mode cluster \  # can be client for client mode
   --executor-memory 20G \
   --num-executors 50 \
-  tmp/Recipie_Process.py \
+  --py-files tmp/jobs.zip \
+  /tmp/Recipie_Process.py \
   file:/tmp/recipes.json \
   'load,tranform'
 
 
 # Run a Python application on a Spark standalone cluster
 ./bin/spark-submit \
-  --master spark://207.184.161.138:7077 \
-  tmp/Recipie_Process.py \
+  --master 'local[*]' \
+  --py-files /tmp/jobs.zip \
+  /tmp/Recipie_Process.py \
   file:/tmp/recipes.json \
   'load,transform,query' 'select * from Recipe_table'
 
