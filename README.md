@@ -69,3 +69,16 @@ Requirements
   tmp/Recipie_Process.py \
   file:/tmp/recipes.json \
   'load,transform,query' 'select * from Recipe_table'
+
+PySpark Job Working 
+- This Job Accept parameters :-
+     	- Input file location
+	- Tasks to be executed as string ( 'load' or 'load, transform' or 'load,transform,query'
+	- Note that tasks load and transform ideally be going together like 'load, transform'
+- tasks purpose
+        - Load will just to the loading task ( Reading it from some location )
+	- Transform will happen unless load has been executed first ( Transform will save the data as a table 'Recipe_table')
+	- query task is optional , if u specify query then make sure you pass another argument as query string like 'select * from Recipe_table'
+- In The Entire execution a table is already created under 'mydb' schema 'mydb.Recipe_table', This table can be queried anytime after and during each execution using Impala or hive.
+- The Recipe_table has  Columns (name, recipe, date_of_execution , difficulty ) , Its an append mode table.
+	
