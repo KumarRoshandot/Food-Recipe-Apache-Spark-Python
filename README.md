@@ -1,5 +1,10 @@
 # Apache-Spark-Python Recipe data process
-Use case for processing a json file in PySpark
+- A Example Showcasing ETL job using PySpark
+- Demonstrate Running on Clusters
+- Demonstrate Passing external jobs( Libraries ) Using Spark Submit External Parameters
+
+---
+## Use case for processing a json file in PySpark
 
 1) Below is the requirement
 
